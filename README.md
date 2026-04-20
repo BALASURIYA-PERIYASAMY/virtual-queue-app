@@ -47,7 +47,7 @@ Copy code
 ## ⚡ Setup Instructions
 1. Clone repo  
    ```bash
-   git clone https://github.com/yourusername/quickq.git
+   git clone https://github.com/BALASURIYA-PERIYASAMY/virtual-queue-app.git
    cd quickq
 Install dependencies
 
