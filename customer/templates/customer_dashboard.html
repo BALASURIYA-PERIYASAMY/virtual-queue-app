@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Welcome, {{ user.name }}</h2>
+    <p>Email: {{ user.email }}</p>
+
+    <h3 class="mt-4">Recently Appointed Shops</h3>
+    <div class="row">
+        {% for shop in recent %}
+        <div class="col-md-4">
+            <div class="card p-3 shadow-sm">
+                <h5>{{ shop.name }}</h5>
+                <p>{{ shop.category }}</p>
+                <a href="{{ url_for('customer.join_queue', shop_id=shop.id, user_id=user.id) }}" class="btn btn-primary">
+                    Join Queue
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

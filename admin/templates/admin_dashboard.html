@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Admin Dashboard</h2>
+
+    <h3 class="mt-4">Registered Shops</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Shop Name</th>
+                <th>Category</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for shop in shops %}
+            <tr>
+                <td>{{ shop.name }}</td>
+                <td>{{ shop.category }}</td>
+                <td>
+                    <a href="{{ url_for('admin.delete_shop', shop_id=shop.id) }}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h3 class="mt-4">Registered Customers</h3>
+    <table class="table table-bordered mt-3">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in customers %}
+            <tr>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    <a href="{{ url_for('admin.delete_user', user_id=user.id) }}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h3 class="mt-4">Active Queues</h3>
+    <ul class="list-group mt-2">
+        {% for queue in queues %}
+            <li class="list-group-item">
+                Shop: {{ queue.shop_name }} - {{ queue.customer_count }} customers waiting
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

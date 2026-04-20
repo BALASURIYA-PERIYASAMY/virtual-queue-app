@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Your Queue Status</h2>
+    {% if status %}
+        <ul class="list-group">
+        {% for s in status %}
+            <li class="list-group-item">
+                <strong>{{ s.shop }}</strong> → {{ s.status }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p class="text-muted">You are not in any queue currently.</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{
+  "rules": {
+    "users": {
+      "$userId": {
+        ".read": "request.auth != null && request.auth.uid == $userId",
+        ".write": "request.auth != null && request.auth.uid == $userId"
+      }
+    },
+    "shops": {
+      "$shopId": {
+        ".read": "request.auth != null",
+        ".write": "request.auth != null && request.auth.token.role == 'shop_owner'"
+      }
+    },
+    "appointments": {
+      "$appointmentId": {
+        ".read": "request.auth != null && (request.auth.uid == resource.data.customerId || request.auth.token.role == 'shop_owner')",
+        ".write": "request.auth != null && (request.auth.uid == request.resource.data.customerId || request.auth.token.role == 'shop_owner')"
+      }
+    }
+  }
+}

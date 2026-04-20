@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <h2>Welcome to QuickQ</h2>
+  <p>Book appointments and skip the waiting lines with our smart virtual queue system.</p>
+  <a href="{{ url_for('register') }}" class="btn">Get Started</a>
+</section>
+
+<section class="features">
+  <h3>Why Choose QuickQ?</h3>
+  <div class="feature-list">
+    <div class="feature">
+      <h4>📍 Nearby Shops</h4>
+      <p>Find and book the best shops around your location.</p>
+    </div>
+    <div class="feature">
+      <h4>⚡ Fast Queue</h4>
+      <p>Join queues digitally and save your valuable time.</p>
+    </div>
+    <div class="feature">
+      <h4>📲 Notifications</h4>
+      <p>Get instant updates about your bookings.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

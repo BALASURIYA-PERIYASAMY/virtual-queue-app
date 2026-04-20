@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Manage Appointments for Shop ID: {{ shop_id }}</h2>
+    <table class="table table-bordered mt-3">
+        <thead>
+            <tr>
+                <th>Customer</th>
+                <th>Date & Time</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for app in appointments %}
+            <tr>
+                <td>{{ app.customer_name }}</td>
+                <td>{{ app.datetime }}</td>
+                <td>{{ app.status }}</td>
+                <td>
+                    <a href="{{ url_for('shop_owner.update_appointment', shop_id=shop_id, appointment_id=app.id, action='approved') }}" class="btn btn-success btn-sm">Approve</a>
+                    <a href="{{ url_for('shop_owner.update_appointment', shop_id=shop_id, appointment_id=app.id, action='rejected') }}" class="btn btn-danger btn-sm">Reject</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

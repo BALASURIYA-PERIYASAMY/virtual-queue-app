@@ -1,0 +1,34 @@
+{
+  "users": {
+    "user_001": {
+      "name": "Arjun Kumar",
+      "email": "arjun@example.com",
+      "role": "customer"
+    },
+    "user_002": {
+      "name": "Priya Sharma",
+      "email": "priya@example.com",
+      "role": "shop_owner"
+    }
+  },
+  "shops": {
+    "shop_001": {
+      "name": "Fresh Mart",
+      "ownerId": "user_002",
+      "category": "Grocery",
+      "location": {
+        "lat": 13.0827,
+        "lng": 80.2707
+      },
+      "rating": 4.5
+    }
+  },
+  "appointments": {
+    "app_001": {
+      "shopId": "shop_001",
+      "customerId": "user_001",
+      "status": "pending",
+      "timestamp": "2025-08-22T10:00:00Z"
+    }
+  }
+}
