@@ -11,15 +11,35 @@ A smart **Virtual Queue & Shop Appointment System** built using **Flask + Fireba
 - Responsive UI with Tailwind + Bootstrap
 
 ## 📂 Project Structure
-project/
-│── app.py
-│── config.py
-│── requirements.txt
-│── README.md
-│── templates/
-│── static/
-│── services/
-│── database/
+virtual_queue_management_system
+|-admin/
+|-auth/
+|-customer/
+|-database/
+|-instance/
+|-services/
+|-shop_owner/
+|-static/
+   |-css/
+      |-style.css
+      |-tailwind.css
+   |-js/
+      |-app.js
+      |-customer.js
+      |-shop.js
+|-templates/
+   |-about.html
+   |-base.html
+   |-contact.html
+   |-error.html
+   |-index.html
+   |-login.html
+   |-register.html
+|-app.py
+|-config.py
+|-firebase_key.json
+|-google-services.json
+|-requirements.txt
 
 bash
 Copy code
